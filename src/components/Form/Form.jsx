@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Form = ({ name, number, change, submit }) => {
   return (
     <form onSubmit={submit}>
@@ -28,6 +30,13 @@ const Form = ({ name, number, change, submit }) => {
       <button type="submit">Add Contact</button>
     </form>
   );
+};
+
+Form.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.string,
+  change: PropTypes.func,
+  submit: PropTypes.func,
 };
 
 export default Form;

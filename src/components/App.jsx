@@ -13,8 +13,6 @@ export class App extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    //  console.log(this);
-    console.log(e.target[0].value);
     if (this.state.contacts.find(c => c.name === e.target[0].value)) {
       return alert(`${e.target[0].value} is already in contacts`);
     } else {
@@ -32,9 +30,7 @@ export class App extends Component {
   };
 
   handleChange = e => {
-    console.log(e.target.name);
     const { value, name } = e.target;
-    console.log(value);
     this.setState({ [name]: value });
   };
 
@@ -45,7 +41,6 @@ export class App extends Component {
   };
 
   render() {
-    console.log(this.state);
     const filteredContacts = this.state.contacts.filter(contact =>
       contact.name.toLowerCase().includes(this.state.filter.toLowerCase())
     );
@@ -61,7 +56,6 @@ export class App extends Component {
         />
         <h2>Contacts</h2>
         <Filter filter={this.state.filter} change={this.handleChange} />
-
         <ContactList>
           {filteredContacts.map(contact => {
             const deleteContact = () => {

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Filter = ({ filter, change }) => {
   return (
     <>
@@ -11,6 +13,11 @@ const Filter = ({ filter, change }) => {
       />
     </>
   );
+};
+
+Filter.propTypes = {
+  filter: PropTypes.string,
+  change: PropTypes.func,
 };
 
 export default Filter;
